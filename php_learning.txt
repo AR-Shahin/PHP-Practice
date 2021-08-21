@@ -1,0 +1,107 @@
+VAR_DUMP : to check the variables data type.
+strlen() : return lenght of a string.
+str_word_count() : Count word in a string.
+strrev() : Reverse a String.
+strpos() : Search For a Text Within a String.
+str_replace() : Replace Text Within a String.
+(int,float)variable : type casting.
+pi() : given value of pi.
+max() : given max value.
+min() : given min value.
+abs() : given absolute value.
+sqrt() : given sqrt value.
+round() : given giver nearest integer value.
+rand()  : function generates a random number:
+rand(a,b) : generate any ramdom value netween a to b.
+die() : exit below portion
+rand(start,end) : generate random number 
+header("location:index.php"); Move another file
+gettype(var): see data type
+
+phpinfo(): get php information
+
+---------------SECURITY--------------------------
+password_hash(var,PASSWORD_DEFAULT) : pass
+
+
+
+
+
+**********FORM*****************
+htmlspecialchars($string) : remove html markerup
+trim($string) : remove extra space
+stripslashes($srting) : remove extra blackshesh
+
+************FILE*****************
+enctype ="multipart/from-data" : while using file field
+
+$_FILES['path'][name] : get file name
+$_FILES['path'][size] : get file size
+$_FILES['path'][tmp_name] : get file temporary name
+pathinfo(file name,PATHINFO_EXTENSION): get file extension
+file_exists : check another file
+move_uploaded_file(temporary name,Location); : file save in server
+$_REQUEST['name'] : dont care method get or post
+PHP_SELF : directory name
+
+******************SQL/DATABASE********************
+
+SELECT * FROM table_name : select all
+SELECT column_name FROM table_name : specific 
+INSERT INTO 'table_name' VALUES(--------) : insert value
+
+INSERT INTO 'table_name'(-specific) VALUE(--------) : insert  specific value
+
+UPDATE table_name SET(----------) WHERE conditions : Update data 
+"UPDATE students SET name = '$name',email = '$email',age = $age,address='$address' WHERE id = $id";
+DELETE FORM table_name WHERE conditions : delete data 
+
+
+**************MYSQL******************
+<script>
+  alert("Hello World!");
+</script>
+
+ $con = mysqli_connect('localhost', 'user','password','db_name') : connection with DB
+
+
+$res =mysqli_query($connect,$sql) : run DB
+ 
+    }
+
+**********************
+onclick="return confirm('Are you sure ?')" : confirm alert
+<a href="show.php?id=<?php echo $row['id'];?> : passing data by url
+
+mysqli_num_rows() : row count
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

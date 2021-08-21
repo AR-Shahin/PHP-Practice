@@ -1,17 +1,13 @@
-<?php 
-require_once 'allclasses.php';
+<?php
+require_once 'User.php';
+require_once 'Student.php';
 
+use Student as s;
+use User as u;
 
-$a = new Math();
-echo $a->sum(10,20);
-echo '<br>';
-$x = new any();
-$y = new any();
-$x->name('shahin');
-$x->name('omi');
-$y->name('sss');
+$user = new u\User();
+$student = new s\User();
 
-$aa = new store();
-$aa->set('ars','anisur rahman');
-
-
+if ($user instanceof s\User) {
+    echo true;
+}
