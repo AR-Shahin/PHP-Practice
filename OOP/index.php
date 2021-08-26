@@ -48,11 +48,20 @@ $magic->this_property = 50;
 $magic->helper(10);
 Magic::helper(10);
 
-echo "<br>";
-echo $magic->sum([10, 20, 30]);
-echo "<br>";
-echo array_sum([10, 20]);
-$ar = [10, 20];
-$br = [30, 10];
-$cr = [...$ar, ...$br];
-echo $magic->sum($cr);
+// echo "<br>";
+// echo $magic->sum([10, 20, 30]);
+// echo "<br>";
+// echo array_sum([10, 20]);
+// $ar = [10, 20];
+// $br = [30, 10];
+// $cr = [...$ar, ...$br];
+// echo $magic->sum($cr);
+
+
+// if (is_a($magic, 'Magic')) {
+//     echo 'ok';
+// } else {
+//     echo 'no';
+// }
+
+echo get_class($magic);
