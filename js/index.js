@@ -294,7 +294,7 @@ function reveal() {
   }
 
   var img = document.createElement("img");
-  img.setAttribute("src", `${window.location.origin}/mash.png`);
+  img.setAttribute("src", `https://github.com/AR-Shahin/OOP_practice_with_PHP/blob/master/mash.png`);
 //   img.style.width = `50%`;
   //ifrm.style.width = `${w}px`;
   //ifrm.style.height = `${h}px`;
