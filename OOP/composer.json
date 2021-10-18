@@ -1,0 +1,9 @@
+{
+    "autoload": {
+        "classmap": ["app"]
+    },
+    "require": {
+        "kwn/number-to-words": "^2.1",
+        "saaiful/number-to-word": "^0.0.1"
+    }
+}

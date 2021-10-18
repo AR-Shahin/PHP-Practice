@@ -1,7 +1,19 @@
 <?php
 
-require('app/Math.php');
-require('app/Serialize.php');
+// require('app/Math.php');
+// require('app/Serialize.php');
+// require_once __DIR__  . './vendor/autoload.php';
+// echo __DIR__ . '/vendor/autoload.php';
+// exit();
+require_once __DIR__ . '/vendor/autoload.php';
+
+use NumberToWords\NumberToWords;
+use Saaiful\NumberToWord\Word;
+// create the number to words "manager" class
+$numberToWords = new NumberToWords();
+
+// build a new number transformer using the RFC 3066 language identifier
+$numberTransformer = $numberToWords->getNumberTransformer('de');
 // $ser = new Serialize('html', 'css');
 // $serialize = serialize($ser);
 // echo $serialize;
@@ -10,7 +22,10 @@ require('app/Serialize.php');
 // echo $ins->num1;
 // exit();
 // echo 'hello Sha';
-
+echo $numberTransformer->toWords(100);
+echo "<br>";
+echo n2w(100);
+echo "<br>";
 class Magic
 {
     public function __get($params)
@@ -40,13 +55,13 @@ class Magic
     }
 }
 
-$magic = new Magic();
+// $magic = new Magic();
 
-$magic->this_property;
-$magic->this_property = 50;
+// $magic->this_property;
+// $magic->this_property = 50;
 
-$magic->helper(10);
-Magic::helper(10);
+// $magic->helper(10);
+// Magic::helper(10);
 
 // echo "<br>";
 // echo $magic->sum([10, 20, 30]);
@@ -65,3 +80,82 @@ Magic::helper(10);
 // }
 
 echo get_class($magic);
+
+?>
+
+<?php
+
+// class User
+// {
+//     public $name;
+//     protected $email;
+//     private $password;
+
+//     public function getName()
+//     {
+//         return $this->name;
+//     }
+
+//     public function init($name, $email, $password)
+//     {
+//         $this->name = $name;
+//         $this->email = $email;
+//         $this->password = $password;
+//     }
+// }
+
+// $user = new User();
+// $user->init('Shahin', 's@mail.com', 123);
+
+final class A
+{
+
+    final function greetings()
+    {
+        return $this->name;
+    }
+}
+
+// class B extends A
+// {
+//     public $id;
+//     function __construct($name, $id)
+//     {
+//         parent::__construct($name);
+//         $this->id = $id;
+//     }
+// }
+// $pr = new B('Shain', 2);
+
+// echo $pr->greetings();
+
+
+
+
+
+class German extends Person
+{
+    public function greet()
+    {
+        return 'Hallo!';
+    }
+}
+class French extends Person
+{
+    public function greet()
+    {
+        return 'Bonjour!';
+    }
+}
+function greeting($people)
+{
+    foreach ($people as $person) {
+        echo $person->greet() . '<br>';
+    }
+}
+$people = [
+    new English(),
+    new German(),
+    new French()
+];
+greeting($people);

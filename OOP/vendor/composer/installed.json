@@ -1,0 +1,118 @@
+{
+    "packages": [
+        {
+            "name": "kwn/number-to-words",
+            "version": "2.1.1",
+            "version_normalized": "2.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kwn/number-to-words.git",
+                "reference": "eb5d3493a5df0e3bac8a5156051ab9bcc35ec837"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kwn/number-to-words/zipball/eb5d3493a5df0e3bac8a5156051ab9bcc35ec837",
+                "reference": "eb5d3493a5df0e3bac8a5156051ab9bcc35ec837",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5.6",
+                "squizlabs/php_codesniffer": "^3.6.0"
+            },
+            "time": "2021-10-06T10:54:44+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "NumberToWords\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Karol Wnuk",
+                    "email": "k.wnuk@ascetic.pl"
+                }
+            ],
+            "description": "Multi language standalone PHP number to words converter. Fully tested, open for extensions and new languages.",
+            "keywords": [
+                "currency",
+                "money",
+                "number",
+                "numbers",
+                "string",
+                "to",
+                "words"
+            ],
+            "support": {
+                "issues": "https://github.com/kwn/number-to-words/issues",
+                "source": "https://github.com/kwn/number-to-words/tree/2.1.1"
+            },
+            "install-path": "../kwn/number-to-words"
+        },
+        {
+            "name": "saaiful/number-to-word",
+            "version": "0.0.1",
+            "version_normalized": "0.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saaiful/number-to-word.git",
+                "reference": "b92341105195ed4fe7d25506cf08b76229cb1021"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saaiful/number-to-word/zipball/b92341105195ed4fe7d25506cf08b76229cb1021",
+                "reference": "b92341105195ed4fe7d25506cf08b76229cb1021",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "time": "2018-09-04T20:06:51+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Saaiful\\NumberToWord\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saiful Isalm",
+                    "email": "me@saiful.im"
+                }
+            ],
+            "description": "Numbers to Words Converter (Bangla)",
+            "homepage": "https://github.com/saaiful/number-to-word",
+            "keywords": [
+                "Bangla",
+                "converter",
+                "number",
+                "word"
+            ],
+            "support": {
+                "issues": "https://github.com/saaiful/number-to-word/issues",
+                "source": "https://github.com/saaiful/number-to-word/tree/0.0.1"
+            },
+            "install-path": "../saaiful/number-to-word"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
