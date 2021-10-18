@@ -11,3 +11,5 @@ $student = new s\User();
 if ($user instanceof s\User) {
     echo true;
 }
+
+// echo "<h1 style='color:red'>Hello</h1>";
