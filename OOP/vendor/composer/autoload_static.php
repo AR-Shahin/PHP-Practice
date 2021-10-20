@@ -33,11 +33,15 @@ class ComposerStaticInit46f509c1c525b9424779d041c363b738
     );
 
     public static $classMap = array (
+        'AreaInterface' => __DIR__ . '/../..' . '/app/AreaInterface.php',
+        'Circle' => __DIR__ . '/../..' . '/app/Circle.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'English' => __DIR__ . '/../..' . '/app/English.php',
         'Math' => __DIR__ . '/../..' . '/app/Math.php',
         'Person' => __DIR__ . '/../..' . '/app/Person.php',
         'Serialize' => __DIR__ . '/../..' . '/app/Serialize.php',
+        'Square' => __DIR__ . '/../..' . '/app/Square.php',
+        'Triangle' => __DIR__ . '/../..' . '/app/Triangle.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

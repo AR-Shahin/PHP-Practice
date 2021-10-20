@@ -21,11 +21,11 @@ $numberTransformer = $numberToWords->getNumberTransformer('de');
 // $ins = (new Math())();
 // echo $ins->num1;
 // exit();
-// echo 'hello Sha';
-echo $numberTransformer->toWords(100);
-echo "<br>";
-echo n2w(100);
-echo "<br>";
+// // echo 'hello Sha';
+// echo $numberTransformer->toWords(100);
+// echo "<br>";
+// echo n2w(100);
+// echo "<br>";
 class Magic
 {
     public function __get($params)
@@ -43,7 +43,7 @@ class Magic
         var_dump($params);
         echo "<br><b>This {$method}</b> doesn't not exits! ";
     }
-    public function __callStatic($method, $params = null)
+    public static function __callStatic($method, $params = null)
     {
         var_dump($params);
         echo "<br><b>This {$method}</b> doesn't not exits! \n";
@@ -133,29 +133,112 @@ final class A
 
 
 
-class German extends Person
+// class German extends Person
+// {
+//     public function greet()
+//     {
+//         return 'Hallo!';
+//     }
+// }
+// class French extends Person
+// {
+//     public function greet()
+//     {
+//         return 'Bonjour!';
+//     }
+// }
+// function greeting($people)
+// {
+//     foreach ($people as $person) {
+//         echo $person->greet() . '<br>';
+//     }
+// }
+// $people = [
+//     new English(),
+//     new German(),
+//     new French()
+// ];
+// greeting($people);
+
+$circle = new Circle(10);
+
+// echo $circle->area();
+
+$square = new Triangle(10, 5);
+
+// echo $square->area();
+
+function calculate($areas)
 {
-    public function greet()
-    {
-        return 'Hallo!';
+    $sum = 0;
+    foreach ($areas as $shape) {
+        $sum += $shape->area();
     }
+    echo $sum;
 }
-class French extends Person
-{
-    public function greet()
-    {
-        return 'Bonjour!';
-    }
-}
-function greeting($people)
-{
-    foreach ($people as $person) {
-        echo $person->greet() . '<br>';
-    }
-}
-$people = [
-    new English(),
-    new German(),
-    new French()
-];
-greeting($people);
+
+calculate([$circle, $square]);
+
+// interface Greeting
+// {
+//     public function greet();
+// }
+
+// function greeting($greeters)
+// {
+//     foreach ($greeters as $greeter) {
+//         echo $greeter->greet() . '<br>';
+//     }
+// }
+
+// $greeters = [
+//     new English(),
+//     new German(),
+// ];
+
+// // greeting($greeters);
+// class English implements Greeting
+// {
+//     public function greet()
+//     {
+//         return 'Hello!';
+//     }
+// }
+// class German implements Greeting
+// {
+//     public function greet()
+//     {
+//         return 'Hallo!';
+//     }
+// }
+// trait Logger
+// {
+//     public function log($params)
+//     {
+//         echo "<br>";
+//         echo $params;
+//         echo "<br>";
+//     }
+// }
+// trait Helper
+// {
+//     public function log($params)
+//     {
+//         echo "<br>";
+//         echo $params;
+//         echo "<br>";
+//     }
+// }
+
+// class User
+// {
+//     use Helper, Logger;
+//     public $name;
+//     function __construct($name)
+//     {
+//         $this->name = $name;
+//         $this->log($this->name);
+//     }
+// }
+
+// new User(2);
