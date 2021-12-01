@@ -1,0 +1,12 @@
+{
+    "name": "shahin/y",
+    "authors": [
+        {
+            "name": "AR-Shahin",
+            "email": "mdshahinmije96@gmail.com"
+        }
+    ],
+    "require": {
+        "kwn/number-to-words": "^2.2"
+    }
+}
