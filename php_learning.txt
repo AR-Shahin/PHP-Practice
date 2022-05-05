@@ -79,6 +79,46 @@ mysqli_num_rows() : row count
 
 
 
+<?php
+
+function ars(&$arg)
+{
+    $arg = "hello <br> ";
+    print $arg;
+}
+
+function func(...$args)
+{
+    // echo $args[0];
+    var_dump($args);
+    // echo array_sum([10, 20]);
+}
+
+function abc($a, $b, $c)
+{
+    var_dump($a);
+    var_dump($b);
+    var_dump($c);
+}
+// func(10);
+// func(10, 20);
+
+// $txt = "Hi <br>";
+// print($txt);
+// ars($txt);
+// print($txt);
+// $arr = [10, 20, 30];
+
+// abc(...$arr);
+
+
+function test(string $p, int $q)
+{
+    print $p;
+    print $q;
+}
+
+test(p: "dd", q: 10);
 
 
 
