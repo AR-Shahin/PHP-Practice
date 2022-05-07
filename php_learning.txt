@@ -118,7 +118,41 @@ function test(string $p, int $q)
     print $q;
 }
 
-test(p: "dd", q: 10);
+// test(q: 10, p: '10');
+
+$add = function ($a, $b) {
+    return $a + $b;
+};
+
+
+// echo $add(10, 20);
+
+function square($n)
+{
+    return $n * $n;
+}
+
+$arr = [10, 20, 30];
+
+$brr = array_map(function ($n) {
+    return $n + 10;
+}, $arr);
+
+$brr = array_map(fn ($n) => $n * $n, $arr);
+
+// $brr = array_filter($arr, function ($n) {
+//     return $n > 20;
+// });
+
+// $brr = array_filter($arr, fn ($n) => $n > 10);
+
+// var_dump(($brr));
+
+
+$arrowFun = fn ($a, $b = 100) => $a + $b;
+
+
+echo $arrowFun(50);
 
 
 
