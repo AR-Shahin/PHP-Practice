@@ -34,9 +34,58 @@ class Item extends DB
 
     public function store($title)
     {
-        //return $title;
         $sql = "INSERT INTO `items` (`id`, `title`) VALUES (NULL, '$title')";
-        // $sql = "INSERT INTO items (title) VALUES ($title)";
+
+        try {
+            if ($this->con->query($sql)) {
+                return true;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
+    }
+
+    public function delete($id)
+    {
+        $sql = "DELETE FROM `items` WHERE `items`.`id` = $id";
+
+        try {
+            if ($this->con->query($sql)) {
+                return true;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
+    }
+
+    public function show($id)
+    {
+        $sql = "SELECT * FROM items WHERE `id` = $id";
+
+        $result = $this->con->query($sql);
+        try {
+            if ($result) {
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    return $row;
+                } else {
+                    return false;
+                }
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
+    }
+
+    public function update($title, $id)
+    {
+        $sql = "UPDATE `items` SET `title` = '$title' WHERE `items`.`id` = $id";
 
         try {
             if ($this->con->query($sql)) {

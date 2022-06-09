@@ -11,8 +11,9 @@ include_once('./views/layouts/header.php');
 $item = new Item();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['store'])) {
 
+    # Store
+    if (isset($_POST['store'])) {
         $title = $_REQUEST['title'];
         if (empty($title)) {
             Session::set('error', "Field must not be empty!");
@@ -25,6 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
         // echo Session::get('error');
+    }
+
+    # Delete 
+    if (isset($_POST['delete'])) {
+        $id = $_REQUEST['id'];
+
+        if ($item->delete($id)) {
+            Session::set('type', 'success');
+            Session::set('alert', 'Data Deleted Successfully!');
+        }
     }
 }
 ?>
@@ -59,8 +70,11 @@ if (Session::get('alert')) {
                     <td><?= $item['title'] ?></td>
                     <td>
                         <a href="" class="btn btn-sm btn-success">View</a>
-                        <a href="" class="btn btn-sm btn-info">Edit</a>
-                        <a href="" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="edit.php?id=<?= $item['id'] ?>" class="btn btn-sm btn-info">Edit</a>
+                        <form action="<?= $_SERVER['PHP_SELF'] ?>" class="d-inline" method="POST">
+                            <input type="hidden" name="id" id="" value="<?= $item['id'] ?>">
+                            <button name="delete" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             <?php } ?>
@@ -84,6 +98,6 @@ if (Session::get('alert')) {
 
 
 <?php
-
+Session::forgot('alert');
 include_once('./views/layouts/footer.php');
 ?>
