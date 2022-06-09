@@ -1,18 +1,47 @@
 <?php
 
 include("./app/db/Item.php");
+include("./app/helper/Session.php");
 
 use app\db\Item;
+use app\helper\Session;
 
 include_once('./views/layouts/header.php');
 
 $item = new Item();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['store'])) {
+
+        $title = $_REQUEST['title'];
+        if (empty($title)) {
+            Session::set('error', "Field must not be empty!");
+            header('location: index.php');
+        } else {
+            Session::forgot('error');
+            if ($item->store($title)) {
+                Session::set('type', 'success');
+                Session::set('alert', 'Data Created Successfully!');
+            }
+        }
+        // echo Session::get('error');
+    }
+}
 ?>
 
 
 <h2 class="text-center m-5">All Items</h2>
 <hr>
+<?php
+if (Session::get('alert')) {
+?>
+    <div class="alert alert-<?= Session::get('type') ?> alert-dismissible fade show" role="alert">
+        <?= Session::get('alert') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php
+}
+?>
 <div class="row justify-content-center">
     <div class="col-md-7">
         <table class="table table-bordered text-center">
@@ -40,15 +69,21 @@ $item = new Item();
 
     <div class="col-md-5">
         <h4>Create New Item</h4>
-        <form action="">
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
             <input type="text" class="form-control" name="title" placeholder="Enter Title">
+            <?php
+            if (!empty(Session::get('error'))) { ?>
+                <span class="text-danger p-1 d-block"><?= Session::get('error') ?></span>
+            <?php }
+            ?>
             <br>
-            <button class="btn btn-sm btn-success">Submit</button>
+            <button class="btn btn-sm btn-success" name="store">Submit</button>
         </form>
     </div>
 </div>
 
 
 <?php
+
 include_once('./views/layouts/footer.php');
 ?>

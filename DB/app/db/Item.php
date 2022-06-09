@@ -2,6 +2,8 @@
 
 namespace app\db;
 
+use Exception;
+
 include './app/db/DB.php';
 
 
@@ -22,5 +24,28 @@ class Item extends DB
         }
 
         return $this->items;
+    }
+
+    public function test()
+    {
+        echo "TEST";
+    }
+
+
+    public function store($title)
+    {
+        //return $title;
+        $sql = "INSERT INTO `items` (`id`, `title`) VALUES (NULL, '$title')";
+        // $sql = "INSERT INTO items (title) VALUES ($title)";
+
+        try {
+            if ($this->con->query($sql)) {
+                return true;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
     }
 }
