@@ -8,8 +8,8 @@ class DB
 {
     public $con;
     private $host = "localhost:3306";
-    private $userName = "main";
-    private $password = "1234";
+    private $userName = "newuser";
+    private $password = "password";
     private $dbName = "php_raw";
     public function __construct()
     {

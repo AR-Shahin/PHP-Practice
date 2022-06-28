@@ -1,17 +1,34 @@
 <?php
 
+use App\helper\Auth;
 use App\models\Item;
 use App\helper\Session;
 
 require("./bootstrap/app.php");
 
+$auth = new Auth();
+if(!$auth->isAuthenticate()){
+ 
+    header('location: login.php');
+    exit;
+}
 $item = new Item();
-
 include_once('./views/layouts/header.php');
 
 
 ?>
-
+<div class="d-flex justify-content-between">
+    <div class="">
+        <h6 class="mt-3">Hello, <?= Session::get('authName')?></h6>
+        <h6 class="">Email: <?= Session::get('authEmail')?></h6>
+    </div>
+    <div class="align-self-center">
+        <form action="./app/controller/AuthController.php" method="POST">
+            <button class="btn btn-sm btn-success" name="logout">Logout</button>
+        </form>
+    </div>
+</div>
+<hr>
 <h2 class="text-center m-5">All Items</h2>
 <hr>
 <?php

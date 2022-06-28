@@ -1,7 +1,18 @@
 <?php
-require("./bootstrap/app.php");
 
-use App\helper\Session;
+$a = 10;
+$b = 20;
 
-// if (!isset($_SESSION)) session_start();
-echo Session::get('reee');
+// $a = 100;
+
+echo "A $a <br>";
+echo "B $b <br>";
+
+function swap(&$a,&$b){
+    $t = $a;
+    $a = $b;
+    $b = $t;
+}
+swap($a,$b);
+echo "A $a <br>";
+echo "B $b <br>";
